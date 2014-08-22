@@ -24,6 +24,11 @@
     text : String
   });
 
+//application
+  app.get('*', function(req, res) {
+    res.sendfile('./public/index.html'); // load the single view file (angular will handle the page changes on the front-end)
+  });
+
   // listen (start app with node server.js) ======================================
   app.listen(8080);
   console.log("App listening on port 8080");
@@ -65,7 +70,7 @@ app.get('/api/dateinfos', function(req, res) {
   });
 
   // delete a todo
-  app.delete('/api/dateinogs/:dateinfo_id', function(req, res) {
+  app.delete('/api/dateinfos/:dateinfo_id', function(req, res) {
     Dateinfo.remove({
       _id : req.params.dateinfo_id
     }, function(err, dateinfo) {
