@@ -70,7 +70,7 @@ app.get('/api/dateinfos', function(req, res) {
   });
 
   // delete a todo
-  app.delete('/api/dateinogs/:dateinfo_id', function(req, res) {
+  app.delete('/api/dateinfos/:dateinfo_id', function(req, res) {
     Dateinfo.remove({
       _id : req.params.dateinfo_id
     }, function(err, dateinfo) {
